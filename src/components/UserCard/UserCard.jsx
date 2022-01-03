@@ -18,35 +18,37 @@ const UserCard = ({ userData }) => {
   let formatDate = `${Day}/${Month}/${Year}`;
 
   return (
-    <div className="card">
-      <div className="cardImg">
-        <img src={userData.picture.thumbnail} alt="" />
-      </div>
+    <>
+      {openModal && <Modal closeModal={setOpenModal} userData={userData} />}
+      <div className="card">
+        <div className="cardImg">
+          <img src={userData.picture.thumbnail} alt="" />
+        </div>
 
-      <div className="cardTitle">
-        <h3 className="username" onClick={() => setOpenModal(true)}>
-          {userData.login.username}
-        </h3>
-        {openModal && <Modal closeModal={setOpenModal} userData={userData} />}
-      </div>
+        <div className="cardTitle">
+          <h3 className="username" onClick={() => setOpenModal(true)}>
+            {userData.login.username}
+          </h3>
+        </div>
 
-      <div className="cardBody">
-        <CardBody
-          title="Full name:"
-          desc={`${userData.name.first}  ${userData.name.last}`}
-        />
-        <CardBody title="DOB:" desc={formatDate} />
-        <CardBody title="Email:" desc={userData.email} />
-        <CardBody
-          title="Phone Number:"
-          desc={<Phone number={userData.phone} />}
-        />
-        <CardBody
-          title="Address:"
-          desc={<Location location={userData.location} />}
-        />
+        <div className="cardBody">
+          <CardBody
+            title="Full name:"
+            desc={`${userData.name.first}  ${userData.name.last}`}
+          />
+          <CardBody title="DOB:" desc={formatDate} />
+          <CardBody title="Email:" desc={userData.email} />
+          <CardBody
+            title="Phone Number:"
+            desc={<Phone number={userData.phone} />}
+          />
+          <CardBody
+            title="Address:"
+            desc={<Location location={userData.location} />}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
