@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, sans-serif;
+}
+
+.App {
+  padding: 2rem;
+  overflow-x: hidden;
+  z-index: -1;
+  @media (max-width: 500px) {
+    padding: 1rem;
+  }
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: rgba(20, 20, 94, 0.877);
+
+      @media (max-width: 500px) {
+        font-size: 1.5rem;
+      }
+    }
+    .searchBox {
+      outline: none;
+      width: 50%;
+      border: 1px solid grey;
+      font-size: 1rem;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+
+      @media (max-width: 500px) {
+        font-size: 0.85rem;
+        width: 90%;
+      }
+    }
+  }
+}
+
+.cardsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  @media (max-width: 500px) {
+    padding: 0.5rem 0;
+  }
+}
